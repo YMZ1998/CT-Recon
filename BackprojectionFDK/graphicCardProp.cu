@@ -1,5 +1,5 @@
 /**
-*  Copyright © [2011], Empa, Juergen Hofmann
+*  Copyright ?[2011], Empa, Juergen Hofmann
 */
 /**********************************************************
 *
@@ -11,28 +11,25 @@
 * Initial revision
 *
 **********************************************************/
-#include "typesFDK.h"
-#include "recon.h"
-#include <vector>
 #include <iostream>
+#include <vector>
+#include "recon.h"
+#include "typesFDK.h"
 
 using namespace std;
 
-extern "C"
-void GetGraphicCardProp(vector<GraphicCardProp> &gpuPropV)
-{
-	// get graphic card property
-	////////////////////////////
-	// get number of available graphic devices
-	const unsigned MB = 1024*1024;
-	int cnt;
-	cudaDeviceProp prop;
-	HANDLE_ERROR(cudaGetDeviceCount(&cnt));
-	for(int i = 0; i < cnt; i++)
-	{
-		HANDLE_ERROR(cudaGetDeviceProperties(&prop,i));
-		GraphicCardProp gpuProp;
-        /*
+void GetGraphicCardProp(vector<GraphicCardProp>& gpuPropV) {
+  // get graphic card property
+  ////////////////////////////
+  // get number of available graphic devices
+  const unsigned MB = 1024 * 1024;
+  int cnt;
+  cudaDeviceProp prop;
+  HANDLE_ERROR(cudaGetDeviceCount(&cnt));
+  for (int i = 0; i < cnt; i++) {
+    HANDLE_ERROR(cudaGetDeviceProperties(&prop, i));
+    GraphicCardProp gpuProp;
+    /*
         gpuProp.name = prop.name;
 
         //cout << "\n\n ---->>>> " << prop.name << "\n\n";
@@ -44,11 +41,11 @@ void GetGraphicCardProp(vector<GraphicCardProp> &gpuPropV)
 
         if(prop.tccDriver) gpuProp.tccDriver = true;
         */
-		gpuProp.globalMem		= prop.totalGlobalMem/MB;
-		gpuProp.maxThrPerBlk	= prop.maxThreadsPerBlock;
-		gpuProp.majorRev		= prop.major;
-		gpuProp.minorRev		= prop.minor;
-		gpuProp.multProcCnt		= prop.multiProcessorCount ;
-		gpuPropV.push_back(gpuProp);
-	}
+    gpuProp.globalMem = prop.totalGlobalMem / MB;
+    gpuProp.maxThrPerBlk = prop.maxThreadsPerBlock;
+    gpuProp.majorRev = prop.major;
+    gpuProp.minorRev = prop.minor;
+    gpuProp.multProcCnt = prop.multiProcessorCount;
+    gpuPropV.push_back(gpuProp);
+  }
 }

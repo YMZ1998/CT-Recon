@@ -19,3 +19,6 @@ recon_tools/.vs/recon_tools/v15/.suo
 *.db-shm
 *.db-wal
 *.res
+
+build/
+output/

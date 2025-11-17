@@ -91,7 +91,7 @@ void InitAngleTable(const BackProjParam &param)
 }
 
 
-extern "C"
+
 int runFDK(BackProjParam param, int devNo, float *minGray, float *maxGray, FILE *fpVol)
 {
     //cudaSetDevice(0);

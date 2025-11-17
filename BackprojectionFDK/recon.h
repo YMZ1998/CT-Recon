@@ -1,5 +1,5 @@
 /**
-*  Copyright © [2011], Empa, Juergen Hofmann
+*  Copyright ?[2011], Empa, Juergen Hofmann
 */
 
 /**********************************************************
@@ -19,24 +19,25 @@
 #ifndef _RECON_H
 #define _RECON_H
 
-#include "typesFDK.h"
 #include "cuda.h"
+#include "typesFDK.h"
 //#include "cutil_inline.h"
 #include <cuda_runtime_api.h>
 #include <vector>
 
+#include "ct_recon_export.h"
+
 #define _ASYNC_IO
 
-extern "C" 
-int runFDK(BackProjParam param, int devNo, float *minGray, float *maxGray, FILE *fpVol);
+ct_recon_core_export int runFDK(BackProjParam param, int devNo, float* minGray,
+                                float* maxGray, FILE* fpVol);
 
-extern "C"
-void GetGraphicCardProp(std::vector<GraphicCardProp> &gpuPropV);
+ct_recon_core_export void GetGraphicCardProp(
+    std::vector<GraphicCardProp>& gpuPropV);
 
-extern "C"
-void HandleError( cudaError_t err,const char *file,int line );
+ct_recon_core_export void HandleError(cudaError_t err, const char* file,
+                                      int line);
 
-#define HANDLE_ERROR(err) (HandleError(err, __FILE__, __LINE__ ))
+#define HANDLE_ERROR(err) (HandleError(err, __FILE__, __LINE__))
 
-
-#endif // _RECON_H
+#endif  // _RECON_H

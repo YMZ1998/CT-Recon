@@ -1,5 +1,5 @@
 /**
-*  Copyright © [2011], Empa, Juergen Hofmann
+*  Copyright ?[2011], Empa, Juergen Hofmann
 */
 
 #ifndef _CONVERT_H
