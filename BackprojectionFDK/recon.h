@@ -29,10 +29,9 @@
 #define _ASYNC_IO
 
 ct_recon_export int runFDK(BackProjParam param, int devNo, float* minGray,
-                                float* maxGray, FILE* fpVol);
+                           float* maxGray, FILE* fpVol);
 
-ct_recon_export void GetGraphicCardProp(
-    std::vector<GraphicCardProp>& gpuPropV);
+ct_recon_export void GetGraphicCardProp(std::vector<GraphicCardProp>& gpuPropV);
 
 void HandleError(cudaError_t err, const char* file, int line);
 

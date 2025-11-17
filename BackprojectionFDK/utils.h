@@ -1,4 +1,4 @@
 #pragma once
 #include "ct_recon_export.h"
 
-void ct_recon_export PrintVersion(char* executable[]);
+ct_recon_export void PrintVersion(char* executable[]);

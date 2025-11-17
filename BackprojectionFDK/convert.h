@@ -8,6 +8,7 @@
 #include <algorithm>
 #include <cfloat>
 #include <climits>
+#include "typesFDK.h"
 
 //-ju-27-Feb-2014 multithreaded version
 #ifdef _OPENMP
