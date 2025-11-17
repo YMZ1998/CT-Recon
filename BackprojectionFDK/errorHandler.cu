@@ -1,5 +1,5 @@
 /**
-*  Copyright © [2011], Empa, Juergen Hofmann
+*  Copyright ?[2011], Empa, Juergen Hofmann
 */
 /**********************************************************
 
@@ -14,7 +14,6 @@
 #include <cstdlib>
 #include <cuda_runtime_api.h>
 
-extern "C"
 void HandleError(cudaError_t err,const char *file,int line) 
 {
     if (err != cudaSuccess) 

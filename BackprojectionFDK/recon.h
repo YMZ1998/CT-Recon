@@ -16,8 +16,7 @@
 *
 *
 **********************************************************/
-#ifndef _RECON_H
-#define _RECON_H
+#pragma once
 
 #include "cuda.h"
 #include "typesFDK.h"
@@ -29,15 +28,12 @@
 
 #define _ASYNC_IO
 
-ct_recon_core_export int runFDK(BackProjParam param, int devNo, float* minGray,
+ct_recon_export int runFDK(BackProjParam param, int devNo, float* minGray,
                                 float* maxGray, FILE* fpVol);
 
-ct_recon_core_export void GetGraphicCardProp(
+ct_recon_export void GetGraphicCardProp(
     std::vector<GraphicCardProp>& gpuPropV);
 
-ct_recon_core_export void HandleError(cudaError_t err, const char* file,
-                                      int line);
+void HandleError(cudaError_t err, const char* file, int line);
 
 #define HANDLE_ERROR(err) (HandleError(err, __FILE__, __LINE__))
-
-#endif  // _RECON_H

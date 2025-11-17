@@ -1,10 +1,4 @@
-/**
-*  Copyright ?[2011], Empa, Juergen Hofmann
-*/
+#pragma once
+#include "ct_recon_export.h"
 
-#ifndef _UTILS_H
-#define _UTILS_H
-
-void PrintVersion(char* executable[]);
-
-#endif
+void ct_recon_export PrintVersion(char* executable[]);
